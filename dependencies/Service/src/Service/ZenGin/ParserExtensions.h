@@ -90,7 +90,7 @@ namespace GOTHIC_NAMESPACE
 		inline constexpr int GetParserType();
 
 		template <ParserType TReturn, ParserArgument... TArgs>
-		inline void RegisterExternalFunc(zCParser* parser, const char* name, AnyPtr function);
+		inline void RegisterExternalFunc(zCParser* parser, const char* name, void* function);
 
 		template <typename T>
 		struct ExternalFunctionInfo;
@@ -241,7 +241,7 @@ namespace GOTHIC_NAMESPACE
 		}
 
 		template <ParserType TReturn, ParserArgument... TArgs>
-		void RegisterExternalFunc(zCParser* parser, const char* name, AnyPtr function)
+		void RegisterExternalFunc(zCParser* parser, const char* name, void* function)
 		{
 			parser->DefineExternal(name, static_cast<int(*)()>(static_cast<void*>(function)), GetParserType<TReturn>(), GetParserType<TArgs>()..., zPAR_TYPE_VOID);
 		}

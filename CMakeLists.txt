@@ -7,7 +7,7 @@ set(PROJECT_VERSION "1.0.0.0" CACHE STRING "Project version")
 
 include(target_add_versioninfo)
 
-project(zPlugin
+project(zPluginTemplate
 	DESCRIPTION "Union plugin for Gothic Games"
 	VERSION ${PROJECT_VERSION}
 )

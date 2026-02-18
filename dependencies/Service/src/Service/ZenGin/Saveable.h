@@ -71,9 +71,9 @@ namespace GOTHIC_NAMESPACE
 			if (saveables.size() != 1)
 				return;
 
-			CreatePartialHook(std::bit_cast<void*>(ZENDEF(0x0063ADAD, 0x006616AD, 0x006685FD, 0x006C527D)), OnSave);
+			Union::CreatePartialHook(std::bit_cast<void*>(ZENDEF(0x0063ADAD, 0x006616AD, 0x006685FD, 0x006C527D)), OnSave);
 			new GameSub<void>{ GameEvent::LoadBegin_NewGame, OnNewGame };
-			CreatePartialHook(std::bit_cast<void*>(ZENDEF(0x0063C5BA, 0x006630D7, 0x00669EBA, 0x006C6AEA)), OnLoad);
+			Union::CreatePartialHook(std::bit_cast<void*>(ZENDEF(0x0063C5BA, 0x006630D7, 0x00669EBA, 0x006C6AEA)), OnLoad);
 		}
 
 		zSTRING SaveableBase::GetPath() const

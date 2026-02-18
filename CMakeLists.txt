@@ -7,7 +7,9 @@ set(PROJECT_VERSION "1.0.0.0" CACHE STRING "Project version")
 
 include(target_add_versioninfo)
 
-project(zPluginTemplate
+get_filename_component(PROJECT_NAME_FROM_DIR "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
+
+project(${PROJECT_NAME_FROM_DIR}
 	DESCRIPTION "Union plugin for Gothic Games"
 	VERSION ${PROJECT_VERSION}
 )

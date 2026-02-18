@@ -88,6 +88,6 @@ And that's it, when plugin will be built successfully it will automatically be a
 2. Removed resources (use [hook snippets](https://drive.google.com/file/d/1nJF2BbEE-sN3Wa3A99D4lqqZ4HxPA4_R/view?usp=drive_link) instead)
 3. Removed main game hooks (use **GameSub** instead)
 4. Changed code standard to C++ 23
-5. Changed project name to **zPlugin**
+5. Changed project name to the directory name
 6. Generated vdf will be copied to specified game folder (change **EXE_PATH** values in **CMakePresets.json**)
 7. **EXE_PATH** is now used as a default autorun target

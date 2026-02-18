@@ -4,3 +4,6 @@
 [submodule "dependencies/union/gothic-api"]
 	path = dependencies/union/gothic-api
 	url = https://gitlab.com/union-framework/gothic-api.git
+[submodule "dependencies/Service"]
+	path = dependencies/Service
+	url = https://github.com/UnresolvedExternal/Service.git

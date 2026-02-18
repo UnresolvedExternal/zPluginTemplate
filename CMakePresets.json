@@ -42,27 +42,33 @@
 		{
 			"name": "g1",
 			"hidden": true,
-			"cacheVariables": { "GOTHIC_API_G1": true }
+			"cacheVariables": { "GOTHIC_API_G1": true, "EXE_PATH": "D:/Gothic/g1/System/GothicMod.exe" }
 		},
 		{
 			"name": "g1a",
 			"hidden": true,
-			"cacheVariables": { "GOTHIC_API_G1A": true }
+			"cacheVariables": { "GOTHIC_API_G1A": true, "EXE_PATH": "D:/Gothic/g1a/System/GothicMod.exe" }
 		},
 		{
 			"name": "g2",
 			"hidden": true,
-			"cacheVariables": { "GOTHIC_API_G2": true }
+			"cacheVariables": { "GOTHIC_API_G2": true, "EXE_PATH": "D:/Gothic/g2/System/Gothic2.exe" }
 		},
 		{
 			"name": "g2a",
 			"hidden": true,
-			"cacheVariables": { "GOTHIC_API_G2A": true }
+			"cacheVariables": { "GOTHIC_API_G2A": true, "EXE_PATH": "D:/Gothic/g2a/System/Gothic2.exe" }
 		},
 		{
 			"name": "mp",
 			"hidden": true,
-			"cacheVariables": { "GOTHIC_API_G1": true, "GOTHIC_API_G1A": true, "GOTHIC_API_G2": true, "GOTHIC_API_G2A": true }
+			"cacheVariables": {
+				"GOTHIC_API_G1": true,
+				"GOTHIC_API_G1A": true,
+				"GOTHIC_API_G2": true,
+				"GOTHIC_API_G2A": true,
+				"EXE_PATH": "D:/Gothic/g2a/System/Gothic2.exe"
+			}
 		},
 		{ "name": "G1-Debug", "inherits": [ "windows", "x86", "debug", "g1" ] },
 		{ "name": "G1-Release", "inherits": [ "windows", "x86", "release", "g1" ] },

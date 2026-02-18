@@ -81,3 +81,13 @@ To publish a new version of your plugin you just need to create a new [github re
 I recommend naming your release by using your plugin version.
 
 And that's it, when plugin will be built successfully it will automatically be added as release asset to the newest release. By default CI/CD script is using the **MP-Release** configuration, depending on your plugin requirements you might want to change this, to match your plugin supported platform(s).
+
+## Additional changes
+
+1. Integrated library [Service](https://github.com/UnresolvedExternal/Service.git)
+2. Removed resources (use [hook snippets](https://drive.google.com/file/d/1nJF2BbEE-sN3Wa3A99D4lqqZ4HxPA4_R/view?usp=drive_link) instead)
+3. Removed main game hooks (use **GameSub** instead)
+4. Changed code standard to C++ 23
+5. Changed project name to **zPlugin**
+6. Generated vdf will be copied to specified game folder (change **EXE_PATH** values in **CMakePresets.json**)
+7. **EXE_PATH** is now used as a default autorun target

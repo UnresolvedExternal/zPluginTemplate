@@ -4,7 +4,7 @@ This project serves as a starting point for creating a union plugin for the foll
 - [Gothic I](https://gothic.fandom.com/wiki/Gothic_1)
 - [Gothic Sequel](https://gothic.fandom.com/wiki/Gothic_Sequel)
 - [Gothic II](https://en.wikipedia.org/wiki/Gothic_II)
-- [Gothic II Night of The Raven](https://en.wikipedia.org/wiki/Gothic_II:_Night_of_the_Raven).
+- [Gothic II Night of The Raven](https://en.wikipedia.org/wiki/Gothic_II:_Night_of_the_Raven)
 
 It provides a preconfigured base code designed to simplify the development process and help you focus on building new features for your plugin.
 
@@ -82,7 +82,7 @@ I recommend naming your release by using your plugin version.
 
 And that's it, when plugin will be built successfully it will automatically be added as release asset to the newest release. By default CI/CD script is using the **MP-Release** configuration, depending on your plugin requirements you might want to change this, to match your plugin supported platform(s).
 
-## Additional changes
+# Additional changes
 
 1. Integrated library [Service](https://github.com/UnresolvedExternal/Service.git)
 2. Removed resources (use [hook snippets](https://drive.google.com/file/d/1nJF2BbEE-sN3Wa3A99D4lqqZ4HxPA4_R/view?usp=drive_link) instead)

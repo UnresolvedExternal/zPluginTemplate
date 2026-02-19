@@ -5,7 +5,7 @@ using namespace Service;
 #define ENGINE Engine_G1
 #include <Service/Macro.h>
 #include <Service/ZenGin.h>
-#include "Sources.hpp"
+#include "..\plugin\aIncludes.hpp"
 #include <Service/Macro.h>
 #endif
 
@@ -13,7 +13,7 @@ using namespace Service;
 #define ENGINE Engine_G1A
 #include <Service/Macro.h>
 #include <Service/ZenGin.h>
-#include "Sources.hpp"
+#include "..\plugin\aIncludes.hpp"
 #include <Service/Macro.h>
 #endif
 
@@ -21,7 +21,7 @@ using namespace Service;
 #define ENGINE Engine_G2
 #include <Service/Macro.h>
 #include <Service/ZenGin.h>
-#include "Sources.hpp"
+#include "..\plugin\aIncludes.hpp"
 #include <Service/Macro.h>
 #endif
 
@@ -29,7 +29,7 @@ using namespace Service;
 #define ENGINE Engine_G2A
 #include <Service/Macro.h>
 #include <Service/ZenGin.h>
-#include "Sources.hpp"
+#include "..\plugin\aIncludes.hpp"
 #include <Service/Macro.h>
 #endif
 

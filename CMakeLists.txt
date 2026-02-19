@@ -34,11 +34,7 @@ if (GENERATE_UNION_API_DLL AND NOT GENERATE_VDF)
 	message(WARNING "GENERATE_UNION_API_DLL is ON but GENERATE_VDF is OFF. UnionAPI.dll won't be included in the release.")
 endif()
 
-file(GLOB_RECURSE SRC
-    "src/*.cpp"
-	"resources/*.h"
-	"resources/*.rc"
-)
+set(SRC "src/core/DllMain.cpp" "src/core/Plugin.cpp")
 
 add_library(${CMAKE_PROJECT_NAME} SHARED)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${SRC})
@@ -52,7 +48,6 @@ target_include_directories(${CMAKE_PROJECT_NAME}
 	PRIVATE
 		BEFORE "userapi/"
 		"src/"
-		"resources/"
 )
 
 target_add_versioninfo(${CMAKE_PROJECT_NAME}

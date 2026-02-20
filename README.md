@@ -34,16 +34,16 @@ The plugin configuration is located in **CMakeLists.txt**.
 The name of your project is the name of the consisting directory.
 
 Some of the common things that you should propably change are:
-- **project version** (in **CMakeLists.txt**)  
+- **project version** (in **CMakeLists.txt**) 
 	default value is **1.0.0.0**
 
-- paths to Gothic executeables (5 places in **CMakePresets.json**)  
-	default values are  
-		**D:/Gothic/g1/System/GothicMod.exe** for **G1**  
-		**D:/Gothic/g1a/System/GothicMod.exe** for **G1A**  
-		**D:/Gothic/g2/System/Gothic2.exe** for **G2**  
-		**D:/Gothic/g2a/System/Gothic2.exe** for **G2A**  
-		**D:/Gothic/g2a/System/Gothic2.exe** for **MP**
+- paths to Gothic executeables (5 places in **CMakePresets.json**)
+    default values are
+        **D:/Gothic/g1/System/GothicMod.exe** for **G1**
+        **D:/Gothic/g1a/System/GothicMod.exe** for **G1A**
+        **D:/Gothic/g2/System/Gothic2.exe** for **G2**
+        **D:/Gothic/g2a/System/Gothic2.exe** for **G2A**
+        **D:/Gothic/g2a/System/Gothic2.exe** for **MP**
 
 # Building
 
@@ -59,13 +59,18 @@ Follow the steps below to compile the plugin:
 
 1. In Visual Studio, locate the Solution Configurations dropdown menu in the top toolbar.
 2. Select the desired configuration for your build
-	default configuration is **G2A-Debug**
+    default configuration is **G2A-Debug**
 
-## Step 3: Pick the Startup Project
+## Step 3: Code
+
+1. Add your code in **src/plugin/Entry.hpp**
+2. You could manage the list of source files in **src/plugin/aIncludes.hpp**
+
+## Step 4: Pick the Startup Project
 
 1. In Visual Studio set **CMakeLists.txt** as a startup element
 
-### Step 4: Build the plugin
+## Step 5: Build the plugin
 
 1. Once everything is configured, click **Build CMakeLists.txt** (or press **Ctrl+B**).
 2. If you've configured everything correctly, the build process should complete successfully.

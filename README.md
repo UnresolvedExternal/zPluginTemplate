@@ -34,15 +34,15 @@ The plugin configuration is located in **CMakeLists.txt**.
 The name of your project is the name of the consisting directory.
 
 Some of the common things that you should propably change are:
-- **project version** (in **CMakeLists.txt**) 
+- **project version** (in **CMakeLists.txt**)  
 	default value is **1.0.0.0**
 
-- paths to Gothic executeables (5 places in **CMakePresets.json**)
-	default values are
-		**D:/Gothic/g1/System/GothicMod.exe** for **G1**
-		**D:/Gothic/g1a/System/GothicMod.exe** for **G1A**
-		**D:/Gothic/g2/System/Gothic2.exe** for **G2**
-		**D:/Gothic/g2a/System/Gothic2.exe** for **G2A**
+- paths to Gothic executeables (5 places in **CMakePresets.json**)  
+	default values are  
+		**D:/Gothic/g1/System/GothicMod.exe** for **G1**  
+		**D:/Gothic/g1a/System/GothicMod.exe** for **G1A**  
+		**D:/Gothic/g2/System/Gothic2.exe** for **G2**  
+		**D:/Gothic/g2a/System/Gothic2.exe** for **G2A**  
 		**D:/Gothic/g2a/System/Gothic2.exe** for **MP**
 
 # Building

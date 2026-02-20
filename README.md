@@ -15,6 +15,8 @@ Before you start making your own plugin, you need to install some software first
 - [CMake](https://cmake.org/) **Optional** if you plan to use Visual Studio
 - [Visual Studio](https://visualstudio.microsoft.com/pl/) **Essential** for compiling the plugin using the MSVC toolset  
 	(make sure to install **C++ Workload** and **CMake Tools for Visual Studio**)
+- [Hook Snippets](https://drive.google.com/file/d/1nJF2BbEE-sN3Wa3A99D4lqqZ4HxPA4_R/view?usp=drive_link) in order to place hooks quickly
+	(unpack it to **%userprofile%/Documents/Visual Studio 2022/Code Snippets/Visual C++/**)
 
 The Union plugin requires the MSVC toolset for compatibility, so alternative toolchains like MinGW are not supported.
 
@@ -28,12 +30,20 @@ git clone --recursive URL_TO_YOUR_REPO
 
 # Configuration
 
-All of the plugin configuration is located in **REPO_ROOT/CMakeLists.txt**.  
+The plugin configuration is located in **CMakeLists.txt**.
+The name of your project is the name of the consisting directory.
+
 Some of the common things that you should propably change are:
-- **project name** (this is also setting the name of your plugin dll)  
-	default value is **UnionPlugin**
-- **project version**  
+- **project version** (in **CMakeLists.txt**) 
 	default value is **1.0.0.0**
+
+- paths to Gothic executeables (5 places in **CMakePresets.json**)
+	default values are
+		**D:/Gothic/g1/System/GothicMod.exe** for **G1**
+		**D:/Gothic/g1a/System/GothicMod.exe** for **G1A**
+		**D:/Gothic/g2/System/Gothic2.exe** for **G2**
+		**D:/Gothic/g2a/System/Gothic2.exe** for **G2A**
+		**D:/Gothic/g2a/System/Gothic2.exe** for **MP**
 
 # Building
 
@@ -49,27 +59,18 @@ Follow the steps below to compile the plugin:
 
 1. In Visual Studio, locate the Solution Configurations dropdown menu in the top toolbar.
 2. Select the desired configuration for your build
+	default configuration is **G2A-Debug**
 
 ## Step 3: Pick the Startup Project
 
-1. In Visual Studio, locate the Solution Startup Item dropdown menu in the top toolbar.
-2. Select your plugin from dropdown list
+1. In Visual Studio set **CMakeLists.txt** as a startup element
 
 ### Step 4: Build the plugin
 
-1. Once everything is configured, click **Build Solution** (or press **Ctrl+Shift+B**).
+1. Once everything is configured, click **Build CMakeLists.txt** (or press **Ctrl+B**).
 2. If you've configured everything correctly, the build process should complete successfully.
-
-# Plugin installation
-
-Once the plugin has been compiled successfully, you can tell the game to load it during startup by placing it in `System/autorun` subdirectory.
-
-To do that copy the plugin:  
-**from**: `REPO_ROOT/out/build/YOUR_CONFIGURATION/YOUR_PROJECT_NAME.dll`  
-**to**: `GAME_ROOT/System/autorun/`
-
-You can also create a symbolic link for your dll in `System/autorun` subdirectory, that way you won't be forced to copy the plugin dll each time while you compile a new version of your plugin.  
-On Windows you can use [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) that allows you to create symlinks from file context menu.
+3. If you provided correct Gothic executable path in **CMakePresets.json** then the generated VDF volume will be copied to **Data/Plugins** subfolder.
+	If Union is installed you are able to run Gothic with the plugin from Visual Studio via **F5** or **Ctrl+F5** (with / without debugger)
 
 # Publishing plugin
 
@@ -81,13 +82,3 @@ To publish a new version of your plugin you just need to create a new [github re
 I recommend naming your release by using your plugin version.
 
 And that's it, when plugin will be built successfully it will automatically be added as release asset to the newest release. By default CI/CD script is using the **MP-Release** configuration, depending on your plugin requirements you might want to change this, to match your plugin supported platform(s).
-
-# Additional changes
-
-1. Integrated library [Service](https://github.com/UnresolvedExternal/Service.git)
-2. Removed resources (use [hook snippets](https://drive.google.com/file/d/1nJF2BbEE-sN3Wa3A99D4lqqZ4HxPA4_R/view?usp=drive_link) instead)
-3. Removed main game hooks (use **GameSub** instead)
-4. Changed code standard to C++ 23
-5. Changed project name to the directory name
-6. Generated vdf will be copied to specified game folder (change **EXE_PATH** values in **CMakePresets.json**)
-7. **EXE_PATH** is now used as a default autorun target
